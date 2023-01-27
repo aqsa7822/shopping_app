@@ -2,10 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:shopping_app/helpers/helper_functions.dart';
 import 'package:shopping_app/pages/auth/login_page.dart';
-import 'package:shopping_app/pages/home_page.dart';
 import '../../constants/constants.dart';
 import '../../services/auth_service.dart';
-import '../../services/database_service.dart';
 import '../../widgets/widgets.dart';
 import '../home.dart';
 import 'package:wc_form_validators/wc_form_validators.dart';
@@ -46,7 +44,6 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: _isLoading
           ? Center(
               child: CircularProgressIndicator(

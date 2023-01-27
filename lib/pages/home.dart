@@ -19,7 +19,7 @@ class _HomeState extends State<Home> {
   final List<Widget> pages = [
     const HomePage(),
     const NotificationPage(),
-    const CartPage(),
+    CartPage(),
     const SettingPage(),
   ];
   int _selectedIndex = 0;

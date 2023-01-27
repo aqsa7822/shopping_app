@@ -24,7 +24,6 @@ class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       appBar: topAppBar(context, "Profile"),
       body: Padding(
         padding: const EdgeInsets.all(20),

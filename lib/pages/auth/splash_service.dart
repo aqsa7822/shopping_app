@@ -12,7 +12,7 @@ import '../home.dart';
 class SplashService {
   void isLogin(BuildContext context) async {
     await HelperFunctions.getUserLoggedInStatus().then((value) {
-      if (value == true) {
+      if (value == true && FirebaseAuth.instance.currentUser !=null) {
         Timer(const Duration(seconds: 3),
             () => nextScreenReplace(context, const Home()));
       } else {

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_app/constants/constants.dart';
 import 'package:shopping_app/pages/profile.dart';
 import 'package:shopping_app/pages/search_page.dart';
+import 'package:shopping_app/services/fruits_database_service.dart';
 
 void nextScreen(context, page) {
   Navigator.push(context, MaterialPageRoute(builder: (context) => page));
@@ -83,7 +84,6 @@ AppBar topAppBar(context, String title) {
   return AppBar(
     centerTitle: true,
     foregroundColor: Constants().primaryColor,
-    backgroundColor: Colors.white,
     elevation: 0,
     title: Text(
       title,
@@ -92,7 +92,7 @@ AppBar topAppBar(context, String title) {
     actions: [
       IconButton(
         onPressed: () {
-          nextScreen(context, SearchPage());
+          nextScreen(context, const SearchPage());
         },
         icon: Icon(
           Icons.search,
@@ -103,46 +103,7 @@ AppBar topAppBar(context, String title) {
   );
 }
 
-Widget searchBar(context) {
-  return Container(
-    padding: EdgeInsets.only(left: 50, right: 20, top: 0, bottom: 0),
-    width: MediaQuery.of(context).size.width,
-    decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(30),
-      color: Colors.white,
-      boxShadow: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.5),
-          spreadRadius: 3,
-          blurRadius: 7,
-          offset: Offset(0, 3), // changes position of shadow
-        ),
-      ],
-    ),
-    child: Row(
-      children: [
-        Expanded(
-            child: TextField(
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.zero,
-            hintText: "Search",
-            hintStyle: TextStyle(fontSize: 18,color: Colors.grey),
-            border: InputBorder.none,
-          ),
-        )),
-        IconButton(
-          padding: EdgeInsets.all(0),
-            splashRadius: 20,
-            onPressed: () {},
-            icon: Icon(
-              Icons.search,
-              color: Constants().primaryColor,
-              size: 28,
-            ))
-      ],
-    ),
-  );
-}
+
 InputDecoration inputDecoration(String hintText){
   return InputDecoration(
     fillColor: Constants().fieldColor,

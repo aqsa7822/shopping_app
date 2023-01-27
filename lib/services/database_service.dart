@@ -21,6 +21,7 @@ class DatabaseService {
       "userId": userId,
       "address": address,
       "token": "",
+      "orders":[],
       "createdAt": Timestamp.now(),
     });
   }
@@ -30,5 +31,7 @@ class DatabaseService {
         await userCollection.where('email', isEqualTo: email).get();
     return snapshot;
   }
-
+  getUserOrders()async{
+    return userCollection.doc(userId).get();
+  }
 }

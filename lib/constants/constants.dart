@@ -11,4 +11,5 @@ class Constants{
   final fieldColor=const Color(0xFFC4C4C4).withOpacity(0.35);
   final navIconColor=const Color(0xFFC0C0C0);
   final signOutColor= const Color(0xffe74c3c).withOpacity(0.6);
+  final double deliveryPrice=7.511;
 }
